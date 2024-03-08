@@ -1,0 +1,1377 @@
+body {
+    background-image: url(./assets/img/ll.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+
+h1,
+p {
+    margin: 0;
+}
+
+.btn {
+    border-radius: 50%;
+    transition: transform 0.5s cubic-bezier(1, 0, 0.5, -1) 0.25s, box-shadow 0.5s cubic-bezier(1, -5, 0.5, 5) 0.25s;
+    transform: scale(0.5);
+    animation: btn_noise 3s ease-in-out 1, btn_ring 1s ease-in-out 3s 1;
+    box-shadow: inset 0 0 0 20px rgba(255, 255, 255, 1), 0 0 30px white;
+    left: 50%;
+    top: 50%;
+    margin: -20rem;
+    width: 40rem;
+    height: 40rem;
+    position: absolute;
+    cursor: pointer;
+}
+
+.btn::before,
+.btn::after {
+    opacity: 0;
+    content: "";
+    position: absolute;
+    width: 31rem;
+    height: 29rem;
+    margin: -2rem -3rem -2rem -3rem;
+    border-radius: 50%;
+    z-index: -10;
+}
+
+.btn::before {
+    box-shadow: 0 -15px 30px -15px rgba(255, 255, 255, 0.8), -25px 15px 50px -25px rgba(255, 255, 255, 0.2), 0 -25px 15px -20px rgba(255, 255, 255, .3);
+}
+
+.btn::after {
+    box-shadow: 0 -25px 20px -15px rgba(255, 255, 255, 0.2), 10px 25px 15px -30px rgba(255, 255, 255, 1), -10px 30px 20px -30px rgba(255, 255, 255, .3);
+}
+
+.btn-info {
+    border-radius: 50%;
+    transform: scale(0);
+    transition: all 0.3s ease-in-out;
+    background-image: url(./assets/img/hero.jpg);
+    overflow: hidden;
+    opacity: 0;
+    background-size: 12.5rem 12.5rem;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+}
+
+.btn-h1,
+.btn-button,
+.btn-button::after,
+.btn-button:active::after {
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-h1 {
+    text-shadow: 0 0 0 white, 0 0 1px white, 0 1px 2px rgba(255, 255, 255, .5);
+    position: absolute;
+    clip: rect(0, 20rem, 20rem, 0);
+    font-size: 2em;
+    padding-top: 3.5rem;
+    left: 125px !important;
+    color: transparent;
+}
+
+.btn-line {
+    transition: all 1s ease-in-out;
+    margin: 50rem 3rem 2.5rem;
+    border-top: 1px solid white;
+    width: 0;
+}
+
+.scene-spinner {
+    margin: auto;
+    height: 100%;
+    display: none;
+}
+
+.scene-torus {
+    margin: auto;
+    height: 100%;
+    display: none;
+}
+
+.tor-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.tor-field {
+    position: relative;
+    transform: rotateX(-30deg) rotateY(0deg);
+    animation: tor_rotateY 10s ease-in-out 1;
+    opacity: 1;
+}
+
+.tor-field * {
+    position: absolute;
+}
+
+.tor-field,
+.tor-field * {
+    transform-style: preserve-3d;
+}
+
+.tor-circle:nth-child(1) {
+    transform: rotateY(12deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(1) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 0.2s;
+}
+
+.tor-circle:nth-child(2) {
+    transform: rotateY(24deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(2) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 0.4s;
+}
+
+.tor-circle:nth-child(3) {
+    transform: rotateY(36deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(3) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 0.6s;
+}
+
+.tor-circle:nth-child(4) {
+    transform: rotateY(48deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(4) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 0.8s;
+}
+
+.tor-circle:nth-child(5) {
+    transform: rotateY(60deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(5) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 1s;
+}
+
+.tor-circle:nth-child(6) {
+    transform: rotateY(72deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(6) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 1.2s;
+}
+
+.tor-circle:nth-child(7) {
+    transform: rotateY(84deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(7) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 1.4s;
+}
+
+.tor-circle:nth-child(8) {
+    transform: rotateY(96deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(8) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 1.6s;
+}
+
+.tor-circle:nth-child(9) {
+    transform: rotateY(108deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(9) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 1.8s;
+}
+
+.tor-circle:nth-child(10) {
+    transform: rotateY(120deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(10) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 2s;
+}
+
+.tor-circle:nth-child(11) {
+    transform: rotateY(132deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(11) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 2.2s;
+}
+
+.tor-circle:nth-child(12) {
+    transform: rotateY(144deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(12) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 2.4s;
+}
+
+.tor-circle:nth-child(13) {
+    transform: rotateY(156deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(13) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 2.6s;
+}
+
+.tor-circle:nth-child(14) {
+    transform: rotateY(168deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(14) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 2.8s;
+}
+
+.tor-circle:nth-child(15) {
+    transform: rotateY(180deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(15) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 3s;
+}
+
+.tor-circle:nth-child(16) {
+    transform: rotateY(192deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(16) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 3.2s;
+}
+
+.tor-circle:nth-child(17) {
+    transform: rotateY(204deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(17) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 3.4s;
+}
+
+.tor-circle:nth-child(18) {
+    transform: rotateY(216deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(18) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 3.6s;
+}
+
+.tor-circle:nth-child(19) {
+    transform: rotateY(228deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(19) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 3.8s;
+}
+
+.tor-circle:nth-child(20) {
+    transform: rotateY(240deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(20) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 4s;
+}
+
+.tor-circle:nth-child(21) {
+    transform: rotateY(252deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(21) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 4.2s;
+}
+
+.tor-circle:nth-child(22) {
+    transform: rotateY(264deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(22) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 4.4s;
+}
+
+.tor-circle:nth-child(23) {
+    transform: rotateY(276deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(23) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 4.6s;
+}
+
+.tor-circle:nth-child(24) {
+    transform: rotateY(288deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(24) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 4.8s;
+}
+
+.tor-circle:nth-child(25) {
+    transform: rotateY(300deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(25) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 5s;
+}
+
+.tor-circle:nth-child(26) {
+    transform: rotateY(312deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(26) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 5.2s;
+}
+
+.tor-circle:nth-child(27) {
+    transform: rotateY(324deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(27) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 5.4s;
+}
+
+.tor-circle:nth-child(28) {
+    transform: rotateY(336deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(28) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 5.6s;
+}
+
+.tor-circle:nth-child(29) {
+    transform: rotateY(348deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(29) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 5.8s;
+}
+
+.tor-circle:nth-child(30) {
+    transform: rotateY(360deg) translateZ(8rem);
+}
+
+.tor-circle:nth-child(30) .tor-rotor {
+    animation: tor_rotateX 3s linear infinite;
+    animation-delay: 6s;
+}
+
+.tor-dot {
+    width: 0.25rem;
+    height: 0.25rem;
+    border-radius: 50%;
+    backface-visibility: hidden;
+}
+
+.tor-dot:nth-child(1) {
+    transform: rotateX(18deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.tor-dot:nth-child(2) {
+    transform: rotateX(36deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.tor-dot:nth-child(3) {
+    transform: rotateX(54deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tor-dot:nth-child(4) {
+    transform: rotateX(72deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.tor-dot:nth-child(5) {
+    transform: rotateX(90deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.tor-dot:nth-child(6) {
+    transform: rotateX(108deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tor-dot:nth-child(7) {
+    transform: rotateX(126deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.tor-dot:nth-child(8) {
+    transform: rotateX(144deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.tor-dot:nth-child(9) {
+    transform: rotateX(162deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tor-dot:nth-child(10) {
+    transform: rotateX(180deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.tor-dot:nth-child(11) {
+    transform: rotateX(198deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.tor-dot:nth-child(12) {
+    transform: rotateX(216deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tor-dot:nth-child(13) {
+    transform: rotateX(234deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.tor-dot:nth-child(14) {
+    transform: rotateX(252deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.tor-dot:nth-child(15) {
+    transform: rotateX(270deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tor-dot:nth-child(16) {
+    transform: rotateX(288deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.tor-dot:nth-child(17) {
+    transform: rotateX(306deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.tor-dot:nth-child(18) {
+    transform: rotateX(324deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tor-dot:nth-child(19) {
+    transform: rotateX(342deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.tor-dot:nth-child(20) {
+    transform: rotateX(360deg) translateZ(3rem);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+@keyframes tor_rotateX {
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+@keyframes tor_rotateY {
+
+    20%,
+    30% {
+        transform: rotateX(90deg) rotateY(360deg);
+    }
+
+    40%,
+    50% {
+        transform: rotateX(-30deg) rotateZ(30deg) scale(0.6);
+    }
+
+    60%,
+    80% {
+        transform: rotateX(60deg) rotateZ(40deg);
+    }
+
+    90%,
+    100% {
+        transform: rotateX(-90deg) rotateY(1440deg) scale(2);
+    }
+}
+
+.scene-hole {
+    margin: auto;
+    height: 100%;
+    display: none;
+}
+
+.hol-hole {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+}
+
+.hol-a {
+    display: block;
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    margin: -10rem;
+    border-radius: 50%;
+    opacity: 0;
+    animation: hol_scale 2s 2 linear;
+}
+
+i:nth-child(1) {
+    animation-delay: 0.25s;
+}
+
+i:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+i:nth-child(3) {
+    animation-delay: 0.75s;
+}
+
+i:nth-child(4) {
+    animation-delay: 1s;
+}
+
+i:nth-child(5) {
+    animation-delay: 1.25s;
+}
+
+i:nth-child(6) {
+    animation-delay: 1.5s;
+}
+
+i:nth-child(7) {
+    animation-delay: 1.75s;
+}
+
+i:nth-child(8) {
+    animation-delay: 2s;
+}
+
+@keyframes hol_scale {
+    0% {
+        transform: scale(2);
+        opacity: 0;
+        box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+    }
+
+    50% {
+        transform: scale(1) translate(0, -1rem);
+        opacity: 1;
+        box-shadow: 0 -10px 20px rgba(255, 255, 255, 0.5);
+    }
+
+    100% {
+        transform: scale(0.1) translate(0, 1rem);
+        opacity: 0;
+        box-shadow: 0 50px 20px rgba(255, 255, 255, 0.5);
+    }
+}
+
+.scene-polygon {
+    margin: auto;
+    height: 100%;
+    display: none;
+}
+
+.pol-wrap {
+    height: inherit;
+    perspective: 35rem;
+    perspective-origin: 50% 50%;
+    position: absolute;
+    left: 50%;
+    animation: up 4s 1 ease-in-out;
+}
+
+.pol-dodecahedron {
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spin 50s infinite alternate cubic-bezier(0, -5, 1, 10);
+}
+
+.pol-dodecahedron,
+.pol-pentagon,
+.pol-pentagon-inner,
+.pol-pentagon-inner::before {
+    top: 50%;
+    left: 50%;
+    margin: -10em;
+    width: 20em;
+    height: 20em;
+}
+
+.pol-pentagon,
+.pol-pentagon-inner,
+.pol-pentagon-inner::before {
+    position: absolute;
+    overflow: hidden;
+}
+
+.pol-pentagon:nth-child(1) {
+    transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(1*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+}
+
+.pol-pentagon:nth-child(1) .pol-pentagon-inner::before {
+    animation: color1 3s infinite alternate linear;
+}
+
+.pol-pentagon:nth-child(2) {
+    transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(2*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+}
+
+.pol-pentagon:nth-child(2) .pol-pentagon-inner::before {
+    animation: color2 3s infinite alternate linear;
+}
+
+.pol-pentagon:nth-child(3) {
+    transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(3*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+}
+
+.pol-pentagon:nth-child(3) .pol-pentagon-inner::before {
+    animation: color3 3s infinite alternate linear;
+}
+
+.pol-pentagon:nth-child(4) {
+    transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(4*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+}
+
+.pol-pentagon:nth-child(4) .pol-pentagon-inner::before {
+    animation: color4 3s infinite alternate linear;
+}
+
+.pol-pentagon:nth-child(5) {
+    transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(5*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+}
+
+.pol-pentagon:nth-child(5) .pol-pentagon-inner::before {
+    animation: color5 3s infinite alternate linear;
+}
+
+.pol-pentagon:nth-child(6) {
+    transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateX(pi()/2rad) scaleY(-1) translateY(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+}
+
+.pol-pentagon:nth-child(6) .pol-pentagon-inner::before {
+    animation: color6 3s infinite alternate linear;
+}
+
+.pol-pentagon:nth-child(7) {
+    transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(7*2*pi()/52*pi()/5rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+}
+
+.pol-pentagon:nth-child(7) .pol-pentagon-inner::before {
+    animation: color7 3s infinite alternate linear;
+}
+
+.pol-pentagon:nth-child(8) {
+    transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(8*2*pi()/52*pi()/5rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+}
+
+.pol-pentagon:nth-child(8) .pol-pentagon-inner::before {
+    animation: color8 3s infinite alternate linear;
+}
+
+.pol-pentagon:nth-child(9) {
+    transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(9*2*pi()/52*pi()/5rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+}
+
+.pol-pentagon:nth-child(9) .pol-pentagon-inner::before {
+    animation: color9 3s infinite alternate linear;
+}
+
+.pol-pentagon:nth-child(10) {
+    transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(10*2*pi()/52*pi()/5rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+}
+
+.pol-pentagon:nth-child(10) .pol-pentagon-inner::before {
+    animation: color10 3s infinite alternate linear;
+}
+
+.pol-pentagon:nth-child(11) {
+    transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(11*2*pi()/52*pi()/5rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+}
+
+.pol-pentagon:nth-child(11) .pol-pentagon-inner::before {
+    animation: color11 3s infinite alternate linear;
+}
+
+.pol-pentagon:nth-child(12) {
+    transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateX(pi()/2rad) translateY(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+}
+
+.pol-pentagon:nth-child(12) .pol-pentagon-inner::before {
+    animation: color12 3s infinite alternate linear;
+}
+
+.pol-pentagon-inner {
+    transform: scaleY(1/cos(pi() / 2 - pi() - 3*pi()/5)) skewX(-pi() / 2 - pi() - 3*pi()/5rad) rotate(pi() - 3*pi()/5/2rad) translateY(-20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)) rotate(pi() - 2*pi() - 3*pi()/5/2rad) skewY(pi() / 2 - pi() - 2*pi() - 3*pi()/5rad) scaleX(cos(pi() / 2 - pi() - 2*pi() - 3*pi()/5));
+}
+
+.pol-pentagon-inner:before {
+    content: "";
+    transform: scaleX(1/cos(pi() / 2 - pi() - 2*pi() - 3*pi()/5)) skewY(-pi() / 2 - pi() - 2*pi() - 3*pi()/5rad) rotate(-pi() - 2*pi() - 3*pi()/5/2rad) translateY(20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5) - 10em);
+}
+
+@keyframes color1 {
+    0% {
+        background: rgba(186, 186, 186, .5);
+    }
+
+    20% {
+        background: rgba(54, 54, 54, .5);
+    }
+
+    40% {
+        background: rgba(74, 74, 74, 0.4);
+    }
+
+    60% {
+        background: rgba(102, 102, 102, 0);
+    }
+
+    80% {
+        background: rgba(204, 204, 204, 1);
+    }
+
+    100% {
+        background: rgba(51, 51, 51, .8);
+    }
+}
+
+@keyframes color2 {
+    0% {
+        background: rgba(3, 3, 3, .5);
+    }
+
+    20% {
+        background: rgba(46, 46, 46, .5);
+    }
+
+    40% {
+        background: rgba(163, 163, 163, 0.4);
+    }
+
+    60% {
+        background: rgba(122, 122, 122, 0);
+    }
+
+    80% {
+        background: rgba(204, 204, 204, 1);
+    }
+
+    100% {
+        background: rgba(51, 51, 51, .8);
+    }
+}
+
+@keyframes color3 {
+    0% {
+        background: rgba(107, 107, 107, .5);
+    }
+
+    20% {
+        background: rgba(191, 191, 191, .5);
+    }
+
+    40% {
+        background: rgba(161, 161, 161, 0.4);
+    }
+
+    60% {
+        background: rgba(61, 61, 61, 0);
+    }
+
+    80% {
+        background: rgba(204, 204, 204, 1);
+    }
+
+    100% {
+        background: rgba(51, 51, 51, .8);
+    }
+}
+
+@keyframes color4 {
+    0% {
+        background: rgba(173, 173, 173, .5);
+    }
+
+    20% {
+        background: rgba(94, 94, 94, .5);
+    }
+
+    40% {
+        background: rgba(48, 48, 48, 0.4);
+    }
+
+    60% {
+        background: rgba(13, 13, 13, 0);
+    }
+
+    80% {
+        background: rgba(204, 204, 204, 1);
+    }
+
+    100% {
+        background: rgba(51, 51, 51, .8);
+    }
+}
+
+@keyframes color5 {
+    0% {
+        background: rgba(71, 71, 71, .5);
+    }
+
+    20% {
+        background: rgba(166, 166, 166, .5);
+    }
+
+    40% {
+        background: rgba(107, 107, 107, 0.4);
+    }
+
+    60% {
+        background: rgba(138, 138, 138, 0);
+    }
+
+    80% {
+        background: rgba(204, 204, 204, 1);
+    }
+
+    100% {
+        background: rgba(51, 51, 51, .8);
+    }
+}
+
+@keyframes color6 {
+    0% {
+        background: rgba(66, 66, 66, .5);
+    }
+
+    20% {
+        background: rgba(191, 191, 191, .5);
+    }
+
+    40% {
+        background: rgba(46, 46, 46, 0.4);
+    }
+
+    60% {
+        background: rgba(138, 138, 138, 0);
+    }
+
+    80% {
+        background: rgba(204, 204, 204, 1);
+    }
+
+    100% {
+        background: rgba(51, 51, 51, .8);
+    }
+}
+
+@keyframes color7 {
+    0% {
+        background: rgba(15, 15, 15, .5);
+    }
+
+    20% {
+        background: rgba(71, 71, 71, .5);
+    }
+
+    40% {
+        background: rgba(201, 201, 201, 0);
+    }
+
+    60% {
+        background: rgba(28, 28, 28, 0.4);
+    }
+
+    80% {
+        background: rgba(51, 51, 51, .8);
+    }
+
+    100% {
+        background: rgba(204, 204, 204, 1);
+    }
+}
+
+@keyframes color8 {
+    0% {
+        background: rgba(122, 122, 122, .5);
+    }
+
+    20% {
+        background: rgba(36, 36, 36, .5);
+    }
+
+    40% {
+        background: rgba(97, 97, 97, 0);
+    }
+
+    60% {
+        background: rgba(66, 66, 66, 0.4);
+    }
+
+    80% {
+        background: rgba(51, 51, 51, .8);
+    }
+
+    100% {
+        background: rgba(204, 204, 204, 1);
+    }
+}
+
+@keyframes color9 {
+    0% {
+        background: rgba(145, 145, 145, .5);
+    }
+
+    20% {
+        background: rgba(94, 94, 94, .5);
+    }
+
+    40% {
+        background: rgba(158, 158, 158, 0);
+    }
+
+    60% {
+        background: rgba(89, 89, 89, 0.4);
+    }
+
+    80% {
+        background: rgba(51, 51, 51, .8);
+    }
+
+    100% {
+        background: rgba(204, 204, 204, 1);
+    }
+}
+
+@keyframes color10 {
+    0% {
+        background: rgba(115, 115, 115, .5);
+    }
+
+    20% {
+        background: rgba(28, 28, 28, .5);
+    }
+
+    40% {
+        background: rgba(252, 252, 252, 0);
+    }
+
+    60% {
+        background: rgba(133, 133, 133, 0.4);
+    }
+
+    80% {
+        background: rgba(51, 51, 51, .8);
+    }
+
+    100% {
+        background: rgba(204, 204, 204, 1);
+    }
+}
+
+@keyframes color11 {
+    0% {
+        background: rgba(105, 105, 105, .5);
+    }
+
+    20% {
+        background: rgba(69, 69, 69, .5);
+    }
+
+    40% {
+        background: rgba(148, 148, 148, 0);
+    }
+
+    60% {
+        background: rgba(51, 51, 51, 0.4);
+    }
+
+    80% {
+        background: rgba(51, 51, 51, .8);
+    }
+
+    100% {
+        background: rgba(204, 204, 204, 1);
+    }
+}
+
+@keyframes color12 {
+    0% {
+        background: rgba(143, 143, 143, .5);
+    }
+
+    20% {
+        background: rgba(199, 199, 199, .5);
+    }
+
+    40% {
+        background: rgba(252, 252, 252, 0);
+    }
+
+    60% {
+        background: rgba(133, 133, 133, 0.4);
+    }
+
+    80% {
+        background: rgba(51, 51, 51, .8);
+    }
+
+    100% {
+        background: rgba(204, 204, 204, 1);
+    }
+}
+
+.pol-pentagon:nth-child(1) {
+    animation: translate1 6s infinite 1s alternate ease-in-out;
+}
+
+@keyframes translate1 {
+
+    0%,
+    20% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(1*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    40% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(1*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    60% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(1*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    80% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*1*2*pi()/52*pi()/5/2*3rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    100% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*1*2*pi()/52*pi()/5/2*6rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))*6rad);
+    }
+}
+
+.pol-pentagon:nth-child(2) {
+    animation: translate2 6s infinite 1s alternate ease-in-out;
+}
+
+@keyframes translate2 {
+
+    0%,
+    20% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(2*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    40% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(2*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    60% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(2*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    80% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*2*2*pi()/52*pi()/5/2*3rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    100% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*2*2*pi()/52*pi()/5/2*6rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))*6rad);
+    }
+}
+
+.pol-pentagon:nth-child(3) {
+    animation: translate3 6s infinite 1s alternate ease-in-out;
+}
+
+@keyframes translate3 {
+
+    0%,
+    20% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(3*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    40% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(3*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    60% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(3*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    80% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*3*2*pi()/52*pi()/5/2*3rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    100% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*3*2*pi()/52*pi()/5/2*6rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))*6rad);
+    }
+}
+
+.pol-pentagon:nth-child(4) {
+    animation: translate4 6s infinite 1s alternate ease-in-out;
+}
+
+@keyframes translate4 {
+
+    0%,
+    20% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(4*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    40% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(4*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    60% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(4*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    80% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*4*2*pi()/52*pi()/5/2*3rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    100% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*4*2*pi()/52*pi()/5/2*6rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))*6rad);
+    }
+}
+
+.pol-pentagon:nth-child(5) {
+    animation: translate5 6s infinite 1s alternate ease-in-out;
+}
+
+@keyframes translate5 {
+
+    0%,
+    20% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(5*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    40% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(5*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    60% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(5*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    80% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*5*2*pi()/52*pi()/5/2*3rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    100% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*5*2*pi()/52*pi()/5/2*6rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))*6rad);
+    }
+}
+
+.pol-pentagon:nth-child(6) {
+    animation: translate6 6s infinite 1s alternate ease-in-out;
+}
+
+@keyframes translate6 {
+    100% {
+        transform: scaleY(-1) translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2*2) rotateX(pi()/2rad) scaleY(-1) translateY(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+}
+
+.pol-pentagon:nth-child(7) {
+    animation: translate7 6s infinite 1s alternate ease-in-out;
+}
+
+@keyframes translate7 {
+
+    0%,
+    20% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(7*2*pi()/52*pi()/5rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    40% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(7*2*pi()/52*pi()/5rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    60% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(7*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    80% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*7*2*pi()/52*pi()/5/2*3rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    100% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*7*2*pi()/52*pi()/5/2*6rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))*6rad);
+    }
+}
+
+.pol-pentagon:nth-child(8) {
+    animation: translate8 6s infinite 1s alternate ease-in-out;
+}
+
+@keyframes translate8 {
+
+    0%,
+    20% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(8*2*pi()/52*pi()/5rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    40% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(8*2*pi()/52*pi()/5rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    60% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(8*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    80% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*8*2*pi()/52*pi()/5/2*3rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    100% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*8*2*pi()/52*pi()/5/2*6rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))*6rad);
+    }
+}
+
+.pol-pentagon:nth-child(9) {
+    animation: translate9 6s infinite 1s alternate ease-in-out;
+}
+
+@keyframes translate9 {
+
+    0%,
+    20% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(9*2*pi()/52*pi()/5rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    40% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(9*2*pi()/52*pi()/5rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    60% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(9*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    80% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*9*2*pi()/52*pi()/5/2*3rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    100% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*9*2*pi()/52*pi()/5/2*6rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))*6rad);
+    }
+}
+
+.pol-pentagon:nth-child(10) {
+    animation: translate10 6s infinite 1s alternate ease-in-out;
+}
+
+@keyframes translate10 {
+
+    0%,
+    20% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(10*2*pi()/52*pi()/5rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    40% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(10*2*pi()/52*pi()/5rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    60% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(10*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    80% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*10*2*pi()/52*pi()/5/2*3rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    100% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*10*2*pi()/52*pi()/5/2*6rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))*6rad);
+    }
+}
+
+.pol-pentagon:nth-child(11) {
+    animation: translate11 6s infinite 1s alternate ease-in-out;
+}
+
+@keyframes translate11 {
+
+    0%,
+    20% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(11*2*pi()/52*pi()/5rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    40% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(11*2*pi()/52*pi()/5rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))rad) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+
+    60% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(11*2*pi()/52*pi()/5/2rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    80% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*11*2*pi()/52*pi()/5/2*3rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)*2) rotateX(pi()/2 - acos(-1/sqrt(5))*3rad);
+    }
+
+    100% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2) rotateY(-2*11*2*pi()/52*pi()/5/2*6rad) translateZ(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotateX(pi()/2 - acos(-1/sqrt(5))*6rad);
+    }
+}
+
+.pol-pentagon:nth-child(12) {
+    animation: translate12 6s infinite 1s alternate ease-in-out;
+}
+
+@keyframes translate12 {
+    100% {
+        transform: translateY(20em*cos(3*pi()/5/2)20em - 20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)*sin(pi() - 2*pi() - 3*pi()/5)*sin(pi() - acos(-1/sqrt(5)))/2*2) rotateX(pi()/2rad) translateY(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 2*tan(pi() / 5)) rotate(-pi() - 3*pi()/5/2rad) skewX(pi() / 2 - pi() - 3*pi()/5rad) scaleY(cos(pi() / 2 - pi() - 3*pi()/5));
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) translateX(20em*2*sin(pi() - 2*pi() - 3*pi()/5 / 2) / 12*sin(pi() - 2*pi() - 3*pi()/5 / 2)/2) rotateZ(-360deg);
+    }
+}
+
+@keyframes up {
+    0% {
+        transform: translateY(30rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
