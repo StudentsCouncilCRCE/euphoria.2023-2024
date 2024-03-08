@@ -341,7 +341,7 @@ small {
     left: 0;
     padding: 24px;
     position: absolute;
-    top: 0;
+    bottom: 0;
 }
 
 .card__category {
@@ -356,6 +356,7 @@ small {
     font-size: 1.9rem;
     text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
     line-height: 1.4;
+    font-weight: 800;
 }
 
 .hero {
